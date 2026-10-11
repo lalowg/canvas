@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 306 96" width="306" height="96" role="img" aria-labelledby="t">
+<title id="t">CANVAS</title>
+<rect width="306" height="96" fill="#F7F6F2"/>
+<g transform="translate(14 16)"><path d="M8 52V34a18 18 0 0 1 18 18Z" fill="#D9A43B"/><rect x="8" y="12" width="40" height="40" fill="none" stroke="#111111" stroke-width="3.5"/><circle cx="44" cy="20" r="14" fill="#E8452C"/><rect x="26" y="38" width="8" height="8" fill="#111111"/></g>
+<g transform="translate(92 32)" fill="none" stroke="#111111" stroke-width="4.2" stroke-linecap="square" stroke-linejoin="miter"><path transform="translate(0 0)" d="M20 6.5A12 12 0 1 0 20 25.5"/><path transform="translate(31 0)" d="M0 32 11 0 22 32M5 21h12"/><path transform="translate(62 0)" d="M0 32V0l20 32V0"/><path transform="translate(91 0)" d="M0 0l11 32L22 0"/><path transform="translate(122 0)" d="M0 32 11 0 22 32M5 21h12"/><path transform="translate(153 0)" d="M19 5.5C17 2 14 0 10.5 0 5.8 0 2 2.8 2 7c0 9 18 5 18 15.5 0 5-4 9.5-9.5 9.5C6.3 32 2.6 29.8 1 26"/></g>
+<circle cx="280" cy="60" r="5" fill="#E8452C"/>
+</svg>

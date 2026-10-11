@@ -1,0 +1,335 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<script>document.documentElement.classList.add('js');</script>
+<title>CANVAS — Art for a Bolder Tomorrow</title>
+<meta name="description" content="CANVAS is a digital art hall. Walk through six rooms of generative artworks drawn live in your browser, redraw them, explore the catalogue and make your own.">
+<meta name="theme-color" content="#F7F6F2">
+<link rel="canonical" href="https://canvas-sand-tau.vercel.app/">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="CANVAS">
+<meta property="og:title" content="CANVAS — Art for a Bolder Tomorrow">
+<meta property="og:description" content="Ten generative works by seven artists in six rooms. Every piece is drawn live and never looks the same twice.">
+<meta property="og:url" content="https://canvas-sand-tau.vercel.app/">
+<meta property="og:image" content="https://canvas-sand-tau.vercel.app/og.png">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="CANVAS — Art for a Bolder Tomorrow">
+<meta name="twitter:description" content="Walk an exhibition of live generative art, room by room, and hang your own work on the last wall.">
+<meta name="twitter:image" content="https://canvas-sand-tau.vercel.app/og.png">
+<link rel="icon" href="favicon.svg" type="image/svg+xml">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Chivo:ital,wght@0,400;0,500;0,700;1,400&family=Rozha+One&display=swap">
+<link rel="stylesheet" href="style.css">
+<script type="module" src="main.js"></script>
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+
+<svg class="sprite" aria-hidden="true" focusable="false">
+  <symbol id="cv-mark" viewBox="0 0 64 64">
+    <path d="M8 52V34a18 18 0 0 1 18 18Z" fill="#D9A43B"/>
+    <rect x="8" y="12" width="40" height="40" fill="none" stroke="#111111" stroke-width="3.5"/>
+    <circle cx="44" cy="20" r="14" fill="#E8452C"/>
+    <rect x="26" y="38" width="8" height="8" fill="#111111"/>
+  </symbol>
+</svg>
+
+<header class="topbar" data-header>
+  <a class="brand" href="#exhibition" aria-label="CANVAS home — back to the exhibition">
+    <svg class="brand-mark" aria-hidden="true" focusable="false"><use href="#cv-mark"/></svg>
+    <span class="brand-word" aria-hidden="true">Canvas</span>
+  </a>
+  <nav class="site-nav" aria-label="Primary">
+    <ul>
+      <li><a href="#exhibition">Exhibition</a></li>
+      <li><a href="#catalogue">Catalogue</a></li>
+      <li><a href="#artists">Artists</a></li>
+      <li><a href="#studio">Studio</a></li>
+      <li><a href="#visit">Visit</a></li>
+    </ul>
+  </nav>
+  <div class="topbar-tools">
+    <a class="btn btn-ink header-cta" href="#visit">Book entry</a>
+    <button class="menu-btn" type="button" aria-expanded="false" aria-controls="menu" data-menu-btn><span>Menu</span><span class="menu-icon" aria-hidden="true"><i></i><i></i></span></button>
+  </div>
+</header>
+
+<div class="menu-panel" id="menu" hidden>
+  <nav aria-label="Mobile">
+    <ol class="menu-list">
+      <li><a href="#exhibition"><span>I</span>Exhibition</a></li>
+      <li><a href="#catalogue"><span>II</span>Catalogue</a></li>
+      <li><a href="#artists"><span>III</span>Artists</a></li>
+      <li><a href="#studio"><span>IV</span>Studio</a></li>
+      <li><a href="#visit"><span>V</span>Visit</a></li>
+    </ol>
+  </nav>
+  <p class="menu-note">Fictional concept brand — portfolio project.</p>
+</div>
+
+<main id="main" tabindex="-1">
+
+  <!-- ============ EXHIBITION WALK (signature) ============ -->
+  <section class="expo" id="exhibition" aria-labelledby="hero-title">
+    <div class="expo-pin">
+      <div class="track" data-track>
+        <article class="room room-entrance wall-gallery" data-room="0" aria-label="Entrance">
+          <div class="entrance-copy">
+            <p class="eyebrow"><span class="eb-dot" aria-hidden="true"></span>CANVAS digital art hall · Exhibition 04</p>
+            <h1 id="hero-title" class="hero-title"><span>Art for a</span> <em>Bolder</em> <span>Tomorrow</span></h1>
+            <p class="lede">Ten generative works by seven artists, hung across six rooms. Every piece is drawn live by code as you arrive, and none of them looks the same twice.</p>
+            <p class="dates"><b>12 March – 30 August 2027</b><span>Pier 9 Hall · Harbour District</span></p>
+            <button type="button" class="walk-btn" data-next>Walk in <span aria-hidden="true">→</span></button>
+          </div>
+          <figure class="poster">
+            <button type="button" class="poster-frame" data-poster-btn aria-label="Redraw the exhibition poster"><canvas data-poster aria-hidden="true"></canvas></button>
+            <figcaption>Exhibition identity, composed by code. Click it to compose another.</figcaption>
+          </figure>
+          <span class="bench" aria-hidden="true"></span>
+        </article>
+      </div>
+      <div class="expo-hud">
+        <p class="hud-room"><span class="hud-k">You are in</span> <b data-room-label>Entrance</b></p>
+        <nav class="plan" aria-label="Exhibition rooms">
+          <ol>
+            <li><button type="button" data-go="0" aria-current="step"><span class="pl-n">0</span><span class="pl-t">Entrance</span></button></li>
+            <li><button type="button" data-go="1"><span class="pl-n">I</span><span class="pl-t">Line</span></button></li>
+            <li><button type="button" data-go="2"><span class="pl-n">II</span><span class="pl-t">Shape</span></button></li>
+            <li><button type="button" data-go="3"><span class="pl-n">III</span><span class="pl-t">Orbit</span></button></li>
+            <li><button type="button" data-go="4"><span class="pl-n">IV</span><span class="pl-t">Ground</span></button></li>
+            <li><button type="button" data-go="5"><span class="pl-n">V</span><span class="pl-t">Network</span></button></li>
+            <li><button type="button" data-go="6"><span class="pl-n">VI</span><span class="pl-t">You</span></button></li>
+          </ol>
+          <span class="plan-bar" data-walk-bar aria-hidden="true"></span>
+        </nav>
+        <div class="hud-arrows">
+          <button type="button" class="arrow" data-prev aria-label="Previous room"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M15 5l-7 7 7 7"/></svg></button>
+          <button type="button" class="arrow" data-next aria-label="Next room"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M9 5l7 7-7 7"/></svg></button>
+        </div>
+        <p class="hud-hint"><span class="hint-fine">Scroll or use ← → to walk · click a work to redraw it</span><span class="hint-coarse">Swipe to walk · tap a work to redraw it</span></p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ CATALOGUE ============ -->
+  <section class="catalogue" id="catalogue" aria-labelledby="cat-title">
+    <div class="cat-head">
+      <p class="kicker">II · Catalogue</p>
+      <h2 id="cat-title" class="h2">Every work, on one wall</h2>
+      <p class="cat-lede">Filter by room or by palette. Each thumbnail is drawn from the same code as the work on the wall.</p>
+    </div>
+    <div class="cat-filters">
+      <div class="fgroup" role="group" aria-label="Filter by room">
+        <span class="fg-k" aria-hidden="true">Room</span>
+        <button type="button" data-filter="room" data-value="all" aria-pressed="true">All</button>
+        <button type="button" data-filter="room" data-value="1" aria-pressed="false">Line</button>
+        <button type="button" data-filter="room" data-value="2" aria-pressed="false">Shape</button>
+        <button type="button" data-filter="room" data-value="3" aria-pressed="false">Orbit</button>
+        <button type="button" data-filter="room" data-value="4" aria-pressed="false">Ground</button>
+        <button type="button" data-filter="room" data-value="5" aria-pressed="false">Network</button>
+      </div>
+      <div class="fgroup" role="group" aria-label="Filter by palette">
+        <span class="fg-k" aria-hidden="true">Palette</span>
+        <button type="button" data-filter="palette" data-value="all" aria-pressed="true">All</button>
+        <button type="button" data-filter="palette" data-value="gallery" aria-pressed="false"><i class="sw sw-gallery" aria-hidden="true"></i>Gallery</button>
+        <button type="button" data-filter="palette" data-value="paper" aria-pressed="false"><i class="sw sw-paper" aria-hidden="true"></i>Paper</button>
+        <button type="button" data-filter="palette" data-value="ochre" aria-pressed="false"><i class="sw sw-ochre" aria-hidden="true"></i>Ochre</button>
+        <button type="button" data-filter="palette" data-value="vermilion" aria-pressed="false"><i class="sw sw-vermilion" aria-hidden="true"></i>Vermilion</button>
+        <button type="button" data-filter="palette" data-value="ink" aria-pressed="false"><i class="sw sw-ink" aria-hidden="true"></i>Ink</button>
+      </div>
+      <p class="cat-count" data-cat-count aria-live="polite"></p>
+    </div>
+    <ol class="cat-grid" data-cat-grid></ol>
+  </section>
+
+  <!-- ============ ARTISTS ============ -->
+  <section class="artists" id="artists" aria-labelledby="art-title">
+    <div class="artists-head">
+      <p class="kicker">III · Artists</p>
+      <h2 id="art-title" class="h2">Seven artists, one medium</h2>
+      <p class="artists-lede">Their medium is code; their subjects are wind, cloth, orbits, hills and each other. Open a name to read about the artist and their works.</p>
+      <p class="fict">All artists in this exhibition are fictional.</p>
+    </div>
+    <ol class="artist-list" data-artist-list></ol>
+    <div class="peek" data-peek aria-hidden="true"><canvas></canvas></div>
+  </section>
+
+  <!-- ============ STUDIO ============ -->
+  <section class="studio" id="studio" aria-labelledby="studio-title">
+    <div class="studio-head">
+      <p class="kicker">IV · Studio</p>
+      <h2 id="studio-title" class="h2">Make the last work in the show</h2>
+      <p class="studio-lede">Pick a recipe, push the dials, and hang the result in Room VI. The exhibition is not finished until you have.</p>
+    </div>
+    <div class="studio-stage">
+      <div class="studio-art"><canvas data-studio-canvas aria-label="Your artwork preview" role="img"></canvas></div>
+      <form class="studio-form" data-studio novalidate>
+        <fieldset class="sf-set">
+          <legend>Recipe</legend>
+          <div class="chips" data-recipes></div>
+        </fieldset>
+        <div class="sf-row">
+          <label for="s-density">Density</label>
+          <input id="s-density" type="range" min="0" max="100" value="50">
+        </div>
+        <div class="sf-row">
+          <label for="s-chaos">Chaos</label>
+          <input id="s-chaos" type="range" min="0" max="100" value="50">
+        </div>
+        <div class="sf-two">
+          <div class="sf-field">
+            <label for="s-palette">Palette</label>
+            <select id="s-palette"></select>
+          </div>
+          <div class="sf-field">
+            <label for="s-seed">Seed</label>
+            <div class="seed-row"><input id="s-seed" type="number" min="1" max="99999" inputmode="numeric"><button type="button" class="btn btn-line" data-shuffle>Shuffle</button></div>
+          </div>
+        </div>
+        <div class="sf-field">
+          <label for="s-title">Title your work</label>
+          <input id="s-title" type="text" maxlength="60" placeholder="Untitled">
+        </div>
+        <button type="submit" class="btn btn-vermilion btn-wide">Hang it in Room VI</button>
+        <p class="hung" data-hung hidden role="status"><b data-hung-title>Untitled</b> now hangs in Room VI. <button type="button" class="link-btn" data-walk-you>Walk there →</button></p>
+      </form>
+    </div>
+  </section>
+
+  <!-- ============ VISIT ============ -->
+  <section class="visit" id="visit" aria-labelledby="visit-title">
+    <div class="visit-info">
+      <p class="kicker">V · Visit</p>
+      <h2 id="visit-title" class="h2">See it in the room</h2>
+      <p class="visit-lede">The works are made to be seen large, in a quiet room, at the speed of walking. Timed entry keeps every room calm.</p>
+      <dl class="facts">
+        <div><dt>Dates</dt><dd>12 March – 30 August 2027</dd></div>
+        <div><dt>Hours</dt><dd>Tuesday to Sunday, 10:00–20:00<br>Thursdays until 22:00</dd></div>
+        <div><dt>Where</dt><dd>Pier 9 Hall, Harbour District</dd></div>
+        <div><dt>Access</dt><dd>Step-free throughout, seating in every room, quiet hour on Sunday mornings</dd></div>
+      </dl>
+      <p class="fict">Fictional venue and dates. Prices are illustrative.</p>
+    </div>
+    <form class="book-form" id="book-form" novalidate>
+      <p class="bf-head">Timed entry</p>
+      <div class="field">
+        <label for="b-date">Day of visit</label>
+        <input id="b-date" type="date" required aria-describedby="b-date-err">
+        <p class="err" id="b-date-err" hidden></p>
+      </div>
+      <fieldset class="field slots" id="b-slot" aria-describedby="b-slot-err">
+        <legend>Entry time</legend>
+        <div class="chips">
+          <label class="chip"><input type="radio" name="slot" value="10:00"><span>10:00</span></label>
+          <label class="chip"><input type="radio" name="slot" value="12:00"><span>12:00</span></label>
+          <label class="chip"><input type="radio" name="slot" value="14:00"><span>14:00</span></label>
+          <label class="chip"><input type="radio" name="slot" value="16:00"><span>16:00</span></label>
+          <label class="chip"><input type="radio" name="slot" value="18:00"><span>18:00</span></label>
+        </div>
+        <p class="err" id="b-slot-err" hidden></p>
+      </fieldset>
+      <div class="field tickets" aria-describedby="b-tickets-err">
+        <div class="tk-row">
+          <label for="b-adults">Adult <small>€18</small></label>
+          <div class="stepper"><button type="button" data-step="-1" data-for="b-adults" aria-label="One adult ticket fewer">−</button><input id="b-adults" type="number" min="0" max="8" value="1" inputmode="numeric"><button type="button" data-step="1" data-for="b-adults" aria-label="One adult ticket more">+</button></div>
+        </div>
+        <div class="tk-row">
+          <label for="b-conc">Concession <small>€9</small></label>
+          <div class="stepper"><button type="button" data-step="-1" data-for="b-conc" aria-label="One concession ticket fewer">−</button><input id="b-conc" type="number" min="0" max="8" value="0" inputmode="numeric"><button type="button" data-step="1" data-for="b-conc" aria-label="One concession ticket more">+</button></div>
+        </div>
+        <p class="tk-total">Total <b data-total>€18</b> <small>Under-12s free</small></p>
+        <p class="err" id="b-tickets-err" hidden></p>
+      </div>
+      <div class="field">
+        <label for="b-name">Name</label>
+        <input id="b-name" type="text" autocomplete="name" required aria-describedby="b-name-err">
+        <p class="err" id="b-name-err" hidden></p>
+      </div>
+      <div class="field">
+        <label for="b-email">Email</label>
+        <input id="b-email" type="email" autocomplete="email" required aria-describedby="b-email-err">
+        <p class="err" id="b-email-err" hidden></p>
+      </div>
+      <button type="submit" class="btn btn-ink btn-wide">Reserve entry</button>
+      <div class="bf-done" data-done hidden tabindex="-1"></div>
+    </form>
+  </section>
+</main>
+
+<dialog class="detail" id="detail" aria-labelledby="dt-title">
+  <div class="dt-inner">
+    <button type="button" class="dt-close" data-close aria-label="Close details"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M6 6l12 12M18 6 6 18"/></svg></button>
+    <div class="dt-art"><canvas data-dt-canvas aria-hidden="true"></canvas></div>
+    <div class="dt-info">
+      <p class="dt-kicker" data-dt-room>Room I · Line</p>
+      <h2 class="dt-title" id="dt-title" data-dt-title>Title</h2>
+      <p class="dt-artist"><button type="button" class="link-btn" data-dt-artist>Artist</button> <span data-dt-year></span></p>
+      <p class="dt-text" data-dt-text></p>
+      <p class="dt-hint" data-dt-hint hidden>Move your pointer across the work: it responds.</p>
+      <div class="dt-params">
+        <p class="dtp-k">Play with the parameters <span>seed <b data-dt-seed>0</b></span></p>
+        <div class="sf-row"><label for="dt-density">Density</label><input id="dt-density" type="range" min="0" max="100" value="50"></div>
+        <div class="sf-row"><label for="dt-chaos">Chaos</label><input id="dt-chaos" type="range" min="0" max="100" value="50"></div>
+        <div class="sf-row"><label for="dt-palette">Palette</label><select id="dt-palette"></select></div>
+      </div>
+      <div class="dt-actions">
+        <button type="button" class="btn btn-ink" data-dt-regen>New seed</button>
+        <button type="button" class="btn btn-line" data-dt-reset>Back to the original</button>
+      </div>
+    </div>
+  </div>
+</dialog>
+
+<dialog class="detail artist-d" id="artist-dialog" aria-labelledby="ad-name">
+  <div class="ad-inner">
+    <button type="button" class="dt-close" data-close aria-label="Close artist"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M6 6l12 12M18 6 6 18"/></svg></button>
+    <p class="dt-kicker">Artist</p>
+    <h2 class="ad-name" id="ad-name" data-ad-name>Name</h2>
+    <p class="ad-meta" data-ad-meta></p>
+    <p class="ad-bio" data-ad-bio></p>
+    <p class="dtp-k">In this exhibition</p>
+    <ul class="ad-works" data-ad-works></ul>
+    <p class="fict">Fictional artist.</p>
+  </div>
+</dialog>
+
+<footer class="site-footer">
+  <div class="ft-top">
+    <p class="ft-big" aria-hidden="true">Canvas</p>
+    <p class="ft-line">Art for a bolder tomorrow.</p>
+  </div>
+  <div class="ft-grid">
+    <nav class="ft-nav" aria-label="Footer">
+      <p class="ft-h">The hall</p>
+      <ul>
+        <li><a href="#exhibition">Exhibition</a></li>
+        <li><a href="#catalogue">Catalogue</a></li>
+        <li><a href="#artists">Artists</a></li>
+        <li><a href="#studio">Studio</a></li>
+        <li><a href="#visit">Visit</a></li>
+      </ul>
+    </nav>
+    <div class="ft-about">
+      <p class="ft-h">About</p>
+      <p>CANVAS is a hall for art made with code: shown large, shown live, and shown as something you can touch.</p>
+    </div>
+    <div class="ft-credit">
+      <p class="ft-h">Wall label</p>
+      <div class="credit-label">
+        <p class="cl-artist">Designed &amp; built by <a href="https://www.linkedin.com/in/saadbashirmarketing/" target="_blank" rel="noopener" aria-label="Saad Bashir on LinkedIn (opens in a new tab)">Saad Bashir</a></p>
+        <p class="cl-title"><i>CANVAS</i>, 2026</p>
+        <p class="cl-medium">Fictional concept brand — portfolio project.</p>
+        <a class="cl-more" href="https://saadbashirportfolio.vercel.app/websites.html">More work <span aria-hidden="true">→</span></a>
+      </div>
+    </div>
+  </div>
+  <div class="ft-base">
+    <p>© 2026 CANVAS. A concept: no real gallery, artists or exhibition.</p>
+    <a href="#exhibition">Back to the entrance ↑</a>
+  </div>
+</footer>
+</body>
+</html>
